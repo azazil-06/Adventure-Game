@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private InputSystem_Actions action;
-    [SerializeField] private Vector3 moveInput;
+    Rigidbody2D playerRB;
+    [SerializeField] private Vector2 moveInput;
 
     [SerializeField] private float moveSpeed =5f;
 
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-       
+       playerRB=GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -26,8 +27,7 @@ public class PlayerController : MonoBehaviour
         action.Player.Enable();
         moveInput = action.Player.Move.ReadValue<Vector2>();
 
-        Debug.Log(action.Player.Sprint.ReadValue<float>());
-
+        //sprint
         if(action.Player.Sprint.ReadValue<float>() == 1f){
                moveSpeed=200;
                }
@@ -36,9 +36,13 @@ public class PlayerController : MonoBehaviour
             moveSpeed=5f;
         }       
 
-        transform.position += Vector3.up *moveSpeed * Time.deltaTime * moveInput.y;
+       
+    }
 
-        // r-l movement
-        transform.position += Vector3.right * moveSpeed * Time.deltaTime *moveInput.x;
+    void FixedUpdate()
+    {
+        Vector2 position = (Vector2)playerRB.position + moveInput * moveSpeed * Time.deltaTime;
+        
+        playerRB.MovePosition(position);
     }
 }
