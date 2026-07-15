@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float moveSpeed =5f;
 
+    public int maxHealth = 5;
+    int currentHealth;
+
 
     void Awake()
     {
@@ -19,6 +22,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
        playerRB=GetComponent<Rigidbody2D>();
+
+       currentHealth=maxHealth;
     }
 
     // Update is called once per frame
@@ -44,5 +49,10 @@ public class PlayerController : MonoBehaviour
         Vector2 position = (Vector2)playerRB.position + moveInput * moveSpeed * Time.deltaTime;
         
         playerRB.MovePosition(position);
+    }
+
+    public void health(int amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount,0,maxHealth);
     }
 }

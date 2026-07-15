@@ -119,6 +119,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1382679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7005105645425011614, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1459559894117618763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1382680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876b9df1a884931438cd0741ef346721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthCollectable
+  player: {fileID: 0}
 --- !u!1 &655409629
 GameObject:
   m_ObjectHideFlags: 0
@@ -5199,6 +5218,78 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a40fb599fa5d46c41b96641d566a396e, type: 3}
+--- !u!1001 &1459559894117618763
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6221091602386648215, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221091602386648215, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221091602386648215, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221091602386648215, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221091602386648215, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221091602386648215, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221091602386648215, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221091602386648215, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221091602386648215, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221091602386648215, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005105645425011614, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      propertyPath: m_Name
+      value: CollectibleHealth
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7005105645425011614, guid: 998368029c0c8bf4094e5bed4ce4ba0f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1382680}
+  m_SourcePrefab: {fileID: 100100000, guid: 998368029c0c8bf4094e5bed4ce4ba0f, type: 3}
 --- !u!1001 &2091206903391056628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5428,3 +5519,4 @@ SceneRoots:
   - {fileID: 6013020769937435090}
   - {fileID: 996889302861958670}
   - {fileID: 1205495548}
+  - {fileID: 1459559894117618763}
