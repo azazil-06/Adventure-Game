@@ -7,6 +7,7 @@ public class EnemyBehavior : MonoBehaviour
     private Rigidbody2D enemyRB;
     private Animator enemyAnimate;
     public bool isVertical;
+    bool broken = true;
 
 
     //direction, speed related
@@ -29,6 +30,12 @@ public class EnemyBehavior : MonoBehaviour
   
     void FixedUpdate()
     {
+        if(!broken)
+        {
+            return;
+        }
+
+
         Vector2 position = enemyRB.position;
         directionTimer -= Time.deltaTime;
 
@@ -65,6 +72,13 @@ public class EnemyBehavior : MonoBehaviour
         {
             playerBody.healthChanger(-1);
         }
+    }
+
+    public void Fix()
+    {
+        broken=false;
+        enemyRB.simulated=false;
+        Destroy(gameObject);
     }
 
 

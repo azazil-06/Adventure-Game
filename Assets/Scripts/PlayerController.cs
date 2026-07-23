@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private InputSystem_Actions action;
     Rigidbody2D playerRB;
     Animator playerAnimate;
+    public GameObject projectile;
     [SerializeField] private Vector2 moveInput;
     [SerializeField] private float moveSpeed =5f;
     public int maxHealth = 5;    
@@ -71,6 +72,12 @@ public class PlayerController : MonoBehaviour
                 isInvincible = false;
                 }
             }
+
+
+        if(action.Player.Attack.WasPressedThisFrame())
+        {
+            Launch();
+        }   
        
     }
 
@@ -99,5 +106,15 @@ public class PlayerController : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amount,0,maxHealth);
 
         Debug.Log("Current health:" + currentHealth);
+    }
+
+    void Launch()
+    {
+        GameObject projectileObject = Instantiate(projectile, playerRB.position + Vector2.up * 0.5f, Quaternion.identity);
+
+        Projectile projectileComponent = projectileObject.GetComponent<Projectile>();
+        projectileComponent.Launch(moveDirection,300);
+
+        playerAnimate.SetTrigger("Launch");
     }
 }
